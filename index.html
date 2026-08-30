@@ -1,0 +1,2085 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Colonial India | A Journey Through History</title>
+
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: #000;
+    color: cyan;
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+
+/* =====================================================
+   MAIN APP
+===================================================== */
+
+#app {
+    min-height: 100vh;
+}
+
+
+/* =====================================================
+   HOME PAGE
+===================================================== */
+
+#homePage {
+    min-height: 100vh;
+    background:
+        radial-gradient(
+            circle at center,
+            #073b3b 0%,
+            #021818 25%,
+            #000 70%
+        );
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+    min-height: 75vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 40px 20px;
+
+    border-bottom: 2px solid cyan;
+
+    position: relative;
+    overflow: hidden;
+}
+
+
+.hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border: 1px solid cyan;
+
+    border-radius: 50%;
+
+    opacity: 0.08;
+
+    animation: rotateCircle 20s linear infinite;
+
+}
+
+
+.hero h1 {
+
+    position: relative;
+
+    margin: 0;
+
+    font-size: clamp(
+        45px,
+        10vw,
+        110px
+    );
+
+    letter-spacing: 8px;
+
+    color: white;
+
+    text-shadow:
+        0 0 10px cyan,
+        0 0 30px cyan,
+        0 0 70px cyan;
+
+}
+
+
+.hero h2 {
+
+    position: relative;
+
+    margin-top: 25px;
+
+    font-size: clamp(
+        18px,
+        3vw,
+        30px
+    );
+
+    letter-spacing: 5px;
+
+    color: cyan;
+
+}
+
+
+.hero p {
+
+    position: relative;
+
+    max-width: 750px;
+
+    line-height: 1.8;
+
+    color: #bbb;
+
+    font-size: 18px;
+
+}
+
+
+@keyframes rotateCircle {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =====================================================
+   SECTION TITLES
+===================================================== */
+
+.section {
+
+    width: min(
+        1100px,
+        92%
+    );
+
+    margin: auto;
+
+    padding: 80px 0;
+}
+
+
+.sectionTitle {
+
+    text-align: center;
+
+    font-size: clamp(
+        30px,
+        5vw,
+        48px
+    );
+
+    color: white;
+
+    margin-bottom: 15px;
+
+}
+
+
+.sectionSubtitle {
+
+    text-align: center;
+
+    color: #888;
+
+    margin-bottom: 60px;
+
+}
+
+
+/* =====================================================
+   CATEGORY CARDS
+===================================================== */
+
+.categoryGrid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+
+}
+
+
+.category {
+
+    min-height: 190px;
+
+    padding: 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #111,
+            #030303
+        );
+
+    border: 1px solid #164444;
+
+    border-top: 4px solid cyan;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s,
+        box-shadow 0.3s,
+        border-color 0.3s;
+
+}
+
+
+.category:hover {
+
+    transform:
+        translateY(-10px);
+
+    border-top-color: red;
+
+    box-shadow:
+        0 0 25px
+        rgba(0,255,255,0.4);
+
+}
+
+
+.categoryIcon {
+
+    font-size: 45px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.category h3 {
+
+    margin: 0;
+
+    color: cyan;
+
+    letter-spacing: 2px;
+
+}
+
+
+.category p {
+
+    color: #888;
+
+    line-height: 1.5;
+
+}
+
+
+/* =====================================================
+   TIMELINE
+===================================================== */
+
+.timeline {
+
+    position: relative;
+
+    width: min(
+        900px,
+        92%
+    );
+
+    margin: auto;
+
+}
+
+
+/* THE CYAN VERTICAL BAR */
+
+.timeline::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 22px;
+
+    top: 0;
+
+    bottom: 0;
+
+    width: 4px;
+
+    background: cyan;
+
+    box-shadow:
+        0 0 10px cyan,
+        0 0 25px cyan;
+
+}
+
+
+.timelineEvent {
+
+    position: relative;
+
+    margin: 45px 0;
+
+    padding-left: 75px;
+
+    cursor: pointer;
+
+}
+
+
+.timelineDot {
+
+    position: absolute;
+
+    left: 10px;
+
+    top: 20px;
+
+    width: 28px;
+
+    height: 28px;
+
+    border-radius: 50%;
+
+    background: #000;
+
+    border: 4px solid cyan;
+
+    box-shadow:
+        0 0 15px cyan;
+
+    transition: 0.3s;
+
+}
+
+
+.timelineEvent:hover
+.timelineDot {
+
+    background: red;
+
+    border-color: white;
+
+    transform: scale(1.3);
+
+}
+
+
+.eventCard {
+
+    padding: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #111,
+            #050505
+        );
+
+    border: 1px solid #164444;
+
+    border-left: 5px solid cyan;
+
+    transition: 0.3s;
+
+}
+
+
+.timelineEvent:hover
+.eventCard {
+
+    transform: translateX(10px);
+
+    border-left-color: red;
+
+    box-shadow:
+        0 0 25px
+        rgba(0,255,255,0.3);
+
+}
+
+
+.eventYear {
+
+    color: red;
+
+    font-size: 14px;
+
+    letter-spacing: 5px;
+
+    font-weight: bold;
+
+}
+
+
+.eventCard h3 {
+
+    color: cyan;
+
+    font-size: 28px;
+
+    margin: 10px 0;
+
+}
+
+
+.eventCard p {
+
+    color: #999;
+
+    line-height: 1.6;
+
+}
+
+
+/* =====================================================
+   EVENT PAGE
+===================================================== */
+
+#eventPage {
+
+    display: none;
+
+    min-height: 100vh;
+
+    position: relative;
+
+    overflow-x: hidden;
+
+}
+
+
+/* =====================================================
+   EVENT BACKGROUND
+===================================================== */
+
+.eventBackground {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 0;
+
+    background-size: cover;
+
+    background-position: center;
+
+    transition:
+        background 0.5s;
+
+}
+
+
+.eventBackground::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,0.98),
+            rgba(0,0,0,0.80),
+            rgba(0,0,0,0.45)
+        );
+
+}
+
+
+/* =====================================================
+   DIFFERENT EVENT SCENES
+===================================================== */
+
+.scene-company {
+
+    background:
+        radial-gradient(
+            circle at 70% 30%,
+            #384545,
+            #111 35%,
+            #000 75%
+        );
+
+}
+
+
+.scene-plassey {
+
+    background:
+        radial-gradient(
+            circle at 70% 40%,
+            #5b351c,
+            #211208 40%,
+            #000 75%
+        );
+
+}
+
+
+.scene-revolt {
+
+    background:
+        radial-gradient(
+            circle at 65% 35%,
+            #6b180f,
+            #210604 40%,
+            #000 75%
+        );
+
+}
+
+
+.scene-crown {
+
+    background:
+        radial-gradient(
+            circle at 70% 30%,
+            #4d4630,
+            #15130b 40%,
+            #000 75%
+        );
+
+}
+
+
+.scene-congress {
+
+    background:
+        radial-gradient(
+            circle at 65% 35%,
+            #193f3f,
+            #071818 45%,
+            #000 75%
+        );
+
+}
+
+
+.scene-famine {
+
+    background:
+        radial-gradient(
+            circle at 60% 45%,
+            #5b4b28,
+            #211b0d 40%,
+            #000 75%
+        );
+
+}
+
+
+.scene-independence {
+
+    background:
+        radial-gradient(
+            circle at 65% 35%,
+            #174a42,
+            #071914 40%,
+            #000 75%
+        );
+
+}
+
+
+/* =====================================================
+   EVENT CONTENT
+===================================================== */
+
+.eventContent {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: min(
+        1100px,
+        92%
+    );
+
+    margin: auto;
+
+    padding:
+        100px 0
+        100px 0;
+
+    animation:
+        eventEnter 0.8s ease;
+
+}
+
+
+@keyframes eventEnter {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(50px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =====================================================
+   BACK BUTTON
+===================================================== */
+
+.backButton {
+
+    display: inline-block;
+
+    padding:
+        13px 22px;
+
+    margin-bottom: 70px;
+
+    background: rgba(0,0,0,0.7);
+
+    border: 1px solid cyan;
+
+    color: cyan;
+
+    cursor: pointer;
+
+    font-family: Georgia, serif;
+
+    font-size: 16px;
+
+    transition: 0.3s;
+
+}
+
+
+.backButton:hover {
+
+    background: cyan;
+
+    color: black;
+
+    box-shadow:
+        0 0 25px cyan;
+
+}
+
+
+/* =====================================================
+   EVENT HERO
+===================================================== */
+
+.eventNumber {
+
+    font-size: clamp(
+        80px,
+        18vw,
+        200px
+    );
+
+    font-weight: bold;
+
+    line-height: 0.8;
+
+    color: transparent;
+
+    -webkit-text-stroke:
+        2px cyan;
+
+    text-shadow:
+        0 0 30px
+        rgba(0,255,255,0.3);
+
+}
+
+
+.eventTitle {
+
+    max-width: 900px;
+
+    font-size: clamp(
+        35px,
+        6vw,
+        75px
+    );
+
+    color: white;
+
+    margin:
+        30px 0;
+
+    line-height: 1.05;
+
+    text-shadow:
+        0 0 20px black;
+
+}
+
+
+.eventIntro {
+
+    max-width: 800px;
+
+    font-size: 22px;
+
+    line-height: 1.8;
+
+    color: #ccc;
+
+}
+
+
+/* =====================================================
+   INFORMATION BLOCKS
+===================================================== */
+
+.infoGrid {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 25px;
+
+    margin-top: 80px;
+
+}
+
+
+.infoBox {
+
+    padding: 35px;
+
+    background:
+        rgba(0,0,0,0.78);
+
+    border:
+        1px solid #174848;
+
+    border-top:
+        4px solid cyan;
+
+    backdrop-filter:
+        blur(5px);
+
+}
+
+
+.infoBox.full {
+
+    grid-column:
+        1 / -1;
+
+}
+
+
+.infoBox h2 {
+
+    color: cyan;
+
+    margin-top: 0;
+
+    font-size: 28px;
+
+}
+
+
+.infoBox.effects {
+
+    border-top-color: red;
+
+}
+
+
+.infoBox.effects h2 {
+
+    color: red;
+
+}
+
+
+.infoBox p {
+
+    color: #ccc;
+
+    line-height: 2;
+
+    font-size: 18px;
+
+}
+
+
+/* =====================================================
+   EVENT FOOTER
+===================================================== */
+
+.eventEnd {
+
+    margin-top: 80px;
+
+    padding: 40px;
+
+    text-align: center;
+
+    border:
+        1px solid cyan;
+
+    background:
+        rgba(0,0,0,0.75);
+
+}
+
+
+.eventEnd h2 {
+
+    color: white;
+
+    font-size: 32px;
+
+}
+
+
+.eventEnd p {
+
+    color: #999;
+
+    line-height: 1.8;
+
+}
+
+
+/* =====================================================
+   CATEGORY POPUP
+===================================================== */
+
+#categoryOverlay {
+
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 999;
+
+    background:
+        rgba(0,0,0,0.96);
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 30px;
+
+}
+
+
+#categoryOverlay.active {
+
+    display: flex;
+
+    animation:
+        overlayIn 0.4s ease;
+
+}
+
+
+@keyframes overlayIn {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            scale(1.05);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            scale(1);
+
+    }
+
+}
+
+
+.categoryPopup {
+
+    max-width: 800px;
+
+}
+
+
+.categoryPopup .bigIcon {
+
+    font-size: 80px;
+
+}
+
+
+.categoryPopup h2 {
+
+    font-size: clamp(
+        40px,
+        8vw,
+        80px
+    );
+
+    color: white;
+
+    text-shadow:
+        0 0 30px cyan;
+
+}
+
+
+.categoryPopup p {
+
+    color: #bbb;
+
+    font-size: 20px;
+
+    line-height: 1.8;
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+
+    padding: 40px;
+
+    text-align: center;
+
+    border-top:
+        1px solid cyan;
+
+    color: #666;
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 850px) {
+
+    .categoryGrid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+    .infoGrid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .infoBox.full {
+
+        grid-column:
+            auto;
+
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    .categoryGrid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .timeline::before {
+
+        left: 15px;
+
+    }
+
+    .timelineEvent {
+
+        padding-left: 55px;
+
+    }
+
+    .timelineDot {
+
+        left: 3px;
+
+    }
+
+    .eventCard {
+
+        padding: 20px;
+
+    }
+
+    .eventCard h3 {
+
+        font-size: 22px;
+
+    }
+
+    .eventContent {
+
+        padding-top: 50px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div id="app">
+
+
+<!-- =====================================================
+     HOME PAGE
+===================================================== -->
+
+<div id="homePage">
+
+
+    <header class="hero">
+
+        <h1>COLONIAL INDIA</h1>
+
+        <h2>A JOURNEY THROUGH POWER, RESISTANCE & CHANGE</h2>
+
+        <p>
+
+            Step into the history of colonial India.
+            Explore the events, people, struggles and
+            transformations that shaped the subcontinent
+            from the arrival of European trading powers
+            to independence in 1947.
+
+        </p>
+
+    </header>
+
+
+
+    <!-- =================================================
+         CATEGORIES
+    ================================================== -->
+
+    <section class="section">
+
+        <h2 class="sectionTitle">
+            EXPLORE THE FORCES OF HISTORY
+        </h2>
+
+        <p class="sectionSubtitle">
+            Touch a category to see its historical theme.
+        </p>
+
+
+        <div class="categoryGrid">
+
+
+            <div class="category"
+                 onclick="showCategory('power')">
+
+                <div class="categoryIcon">⚡</div>
+
+                <h3>POWER</h3>
+
+                <p>
+                    The expansion of colonial political
+                    and military power.
+                </p>
+
+            </div>
+
+
+            <div class="category"
+                 onclick="showCategory('resistance')">
+
+                <div class="categoryIcon">✊</div>
+
+                <h3>RESISTANCE</h3>
+
+                <p>
+                    Uprisings and movements challenging
+                    colonial authority.
+                </p>
+
+            </div>
+
+
+            <div class="category"
+                 onclick="showCategory('crisis')">
+
+                <div class="categoryIcon">🌾</div>
+
+                <h3>CRISIS</h3>
+
+                <p>
+                    Famine, war and economic hardship.
+                </p>
+
+            </div>
+
+
+            <div class="category"
+                 onclick="showCategory('nationalism')">
+
+                <div class="categoryIcon">📣</div>
+
+                <h3>NATIONALISM</h3>
+
+                <p>
+                    The growth of political consciousness
+                    and demands for self-government.
+                </p>
+
+            </div>
+
+
+            <div class="category"
+                 onclick="showCategory('society')">
+
+                <div class="categoryIcon">👥</div>
+
+                <h3>SOCIETY</h3>
+
+                <p>
+                    Changes to everyday life, law,
+                    education and communities.
+                </p>
+
+            </div>
+
+
+            <div class="category"
+                 onclick="showCategory('economy')">
+
+                <div class="categoryIcon">💰</div>
+
+                <h3>ECONOMY</h3>
+
+                <p>
+                    Taxation, agriculture, trade
+                    and economic transformation.
+                </p>
+
+            </div>
+
+
+            <div class="category"
+                 onclick="showCategory('culture')">
+
+                <div class="categoryIcon">📚</div>
+
+                <h3>CULTURE</h3>
+
+                <p>
+                    Education, language, ideas
+                    and cultural change.
+                </p>
+
+            </div>
+
+
+            <div class="category"
+                 onclick="showCategory('independence')">
+
+                <div class="categoryIcon">🇮🇳</div>
+
+                <h3>INDEPENDENCE</h3>
+
+                <p>
+                    The long journey toward the end
+                    of British colonial rule.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         TIMELINE
+    ================================================== -->
+
+    <section class="section">
+
+        <h2 class="sectionTitle">
+            THE ROAD THROUGH COLONIAL INDIA
+        </h2>
+
+        <p class="sectionSubtitle">
+            Touch any event to enter its historical page.
+        </p>
+
+
+        <div class="timeline">
+
+
+            <!-- 1600 -->
+
+            <div class="timelineEvent"
+                 onclick="openEvent('company')">
+
+                <div class="timelineDot"></div>
+
+                <div class="eventCard">
+
+                    <div class="eventYear">
+                        1600
+                    </div>
+
+                    <h3>
+                        THE COMPANY ARRIVES
+                    </h3>
+
+                    <p>
+                        A trading company begins a journey
+                        that will eventually lead to political
+                        power across large parts of India.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- 1757 -->
+
+            <div class="timelineEvent"
+                 onclick="openEvent('plassey')">
+
+                <div class="timelineDot"></div>
+
+                <div class="eventCard">
+
+                    <div class="eventYear">
+                        1757
+                    </div>
+
+                    <h3>
+                        THE BATTLE THAT CHANGED BENGAL
+                    </h3>
+
+                    <p>
+                        The Battle of Plassey becomes a major
+                        turning point in the Company's rise.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- 1857 -->
+
+            <div class="timelineEvent"
+                 onclick="openEvent('revolt')">
+
+                <div class="timelineDot"></div>
+
+                <div class="eventCard">
+
+                    <div class="eventYear">
+                        1857
+                    </div>
+
+                    <h3>
+                        THE REVOLT THAT SHOOK BRITISH RULE
+                    </h3>
+
+                    <p>
+                        A major uprising challenges the
+                        authority of the East India Company.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- 1858 -->
+
+            <div class="timelineEvent"
+                 onclick="openEvent('crown')">
+
+                <div class="timelineDot"></div>
+
+                <div class="eventCard">
+
+                    <div class="eventYear">
+                        1858
+                    </div>
+
+                    <h3>
+                        WHEN THE CROWN TOOK CONTROL
+                    </h3>
+
+                    <p>
+                        Direct rule by the British Crown
+                        replaces Company government.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- 1885 -->
+
+            <div class="timelineEvent"
+                 onclick="openEvent('congress')">
+
+                <div class="timelineDot"></div>
+
+                <div class="eventCard">
+
+                    <div class="eventYear">
+                        1885
+                    </div>
+
+                    <h3>
+                        THE RISE OF NATIONALISM
+                    </h3>
+
+                    <p>
+                        The Indian National Congress creates
+                        an important new political platform.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- 1943 -->
+
+            <div class="timelineEvent"
+                 onclick="openEvent('famine')">
+
+                <div class="timelineDot"></div>
+
+                <div class="eventCard">
+
+                    <div class="eventYear">
+                        1943
+                    </div>
+
+                    <h3>
+                        THE BENGAL FAMINE
+                    </h3>
+
+                    <p>
+                        A devastating wartime food crisis
+                        causes enormous suffering.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- 1947 -->
+
+            <div class="timelineEvent"
+                 onclick="openEvent('independence')">
+
+                <div class="timelineDot"></div>
+
+                <div class="eventCard">
+
+                    <div class="eventYear">
+                        1947
+                    </div>
+
+                    <h3>
+                        THE DAY INDIA BECAME INDEPENDENT
+                    </h3>
+
+                    <p>
+                        British colonial rule comes to an end,
+                        alongside the Partition of British India.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <footer>
+
+        COLONIAL INDIA • INTERACTIVE HISTORY PROJECT
+
+    </footer>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     EVENT PAGE
+===================================================== -->
+
+<div id="eventPage">
+
+
+    <div id="eventBackground"
+         class="eventBackground">
+    </div>
+
+
+    <div class="eventContent">
+
+
+        <button class="backButton"
+                onclick="closeEvent()">
+
+            ← BACK TO TIMELINE
+
+        </button>
+
+
+        <div id="eventNumber"
+             class="eventNumber">
+        </div>
+
+
+        <h1 id="eventTitle"
+            class="eventTitle">
+        </h1>
+
+
+        <p id="eventIntro"
+           class="eventIntro">
+        </p>
+
+
+        <div class="infoGrid">
+
+
+            <div class="infoBox full">
+
+                <h2>
+                    📖 WHAT HAPPENED?
+                </h2>
+
+                <p id="definition">
+                </p>
+
+            </div>
+
+
+            <div class="infoBox">
+
+                <h2>
+                    🔎 CONTEXT & CAUSES
+                </h2>
+
+                <p id="causes">
+                </p>
+
+            </div>
+
+
+            <div class="infoBox effects">
+
+                <h2>
+                    ⚡ EFFECTS & CONSEQUENCES
+                </h2>
+
+                <p id="effects">
+                </p>
+
+            </div>
+
+
+            <div class="infoBox full">
+
+                <h2>
+                    📜 HISTORICAL SIGNIFICANCE
+                </h2>
+
+                <p id="significance">
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="eventEnd">
+
+            <h2>
+                THE STORY CONTINUES...
+            </h2>
+
+            <p>
+                History is not made by one event alone.
+                Return to the timeline and explore what
+                happened before and after this moment.
+            </p>
+
+            <button class="backButton"
+                    onclick="closeEvent()">
+
+                ← RETURN TO TIMELINE
+
+            </button>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     CATEGORY OVERLAY
+===================================================== -->
+
+<div id="categoryOverlay">
+
+
+    <div class="categoryPopup">
+
+        <div id="categoryIcon"
+             class="bigIcon">
+        </div>
+
+        <h2 id="categoryTitle">
+        </h2>
+
+        <p id="categoryText">
+        </p>
+
+        <p>
+            Returning to the timeline...
+        </p>
+
+    </div>
+
+</div>
+
+
+</div>
+
+
+
+<script>
+
+/* =====================================================
+   EVENT DATABASE
+===================================================== */
+
+const events = {
+
+
+company: {
+
+    year: "1600",
+
+    title:
+    "THE COMPANY ARRIVES",
+
+    intro:
+    "A trading enterprise begins a journey that will eventually transform the political history of the Indian subcontinent.",
+
+    scene:
+    "scene-company",
+
+    definition:
+    "The English East India Company was established in 1600 after receiving a royal charter from Queen Elizabeth I. Its original purpose was commercial: the company wanted to trade with regions of Asia and obtain valuable goods such as spices, textiles and other commodities. During the seventeenth century it established trading settlements on the Indian coast. The Company's role changed significantly over time. As competition between European powers and conflicts among Indian states increased, the Company became involved in diplomacy and warfare. Its private army and growing financial resources eventually allowed it to move beyond trade and become a territorial and political power.",
+
+    causes:
+    "European demand for Asian goods encouraged the establishment of trading companies. The Company sought profitable access to Indian markets and products. Competition with other European powers, especially the French, also encouraged the Company to build fortified settlements and military forces. Political divisions and conflicts among regional powers created opportunities for the Company to intervene.",
+
+    effects:
+    "The Company's growing influence gradually changed the balance of political power in India. It acquired territories, collected revenue and developed a large military establishment. Revenue obtained from territories could be used to finance further expansion. Over time, the Company became more than a trading organization: it became a governing authority over large areas.",
+
+    significance:
+    "The arrival of the Company did not immediately mean British colonial rule. Its transformation from a commercial organization into a political power occurred over many decades. Understanding this gradual process helps explain how European commercial activity eventually developed into British colonial control."
+},
+
+
+plassey: {
+
+    year: "1757",
+
+    title:
+    "THE BATTLE THAT CHANGED BENGAL",
+
+    intro:
+    "The Battle of Plassey became one of the most important turning points in the rise of East India Company power.",
+
+    scene:
+    "scene-plassey",
+
+    definition:
+    "The Battle of Plassey was fought on 23 June 1757 in Bengal. The forces of the East India Company, led by Robert Clive, confronted the army of Siraj-ud-Daulah, the Nawab of Bengal. The Company was supported by political figures who had turned against the Nawab. The battle itself was relatively short, but its political consequences were enormous. The Company's victory gave it much greater influence over Bengal and allowed it to play a decisive role in the region's politics.",
+
+    causes:
+    "Tensions had developed between the Company and Siraj-ud-Daulah over trade privileges, fortifications and political influence. The Company also became involved in internal political rivalries within Bengal. Secret agreements with opponents of the Nawab helped the Company gain an advantage.",
+
+    effects:
+    "After its victory, the Company gained substantial political and financial influence in Bengal. The region's wealth and revenue became increasingly important to the Company. These resources helped finance later military campaigns and territorial expansion. Plassey therefore became a major step in the Company's transformation from trader to political power.",
+
+    significance:
+    "Plassey is often remembered as a major starting point for British political dominance in India. Its importance was not simply the battlefield victory itself, but the political and financial opportunities that followed it."
+},
+
+
+revolt: {
+
+    year: "1857",
+
+    title:
+    "THE REVOLT THAT SHOOK BRITISH RULE",
+
+    intro:
+    "In 1857, a major uprising spread across parts of northern and central India, challenging the authority of the East India Company.",
+
+    scene:
+    "scene-revolt",
+
+    definition:
+    "The Revolt of 1857 began among soldiers in the East India Company's army and quickly developed into a wider uprising in several regions. Delhi, Kanpur, Lucknow and Jhansi became important centres of resistance. The causes were complex. Soldiers had grievances about military service and new practices, while rulers and landholders had political and economic complaints. Many people also feared that British policies threatened established social and religious practices. The revolt brought together groups with different motivations, although it did not spread uniformly across the whole of India.",
+
+    causes:
+    "Military grievances were an immediate factor, but deeper causes included political annexations, economic pressures and resentment toward aspects of colonial administration. The annexation of Indian states and changes to land systems affected rulers, soldiers, landlords and peasants in different ways. Religious and social concerns also contributed to distrust of British authority.",
+
+    effects:
+    "The uprising was eventually suppressed by British forces and their allies. However, its political consequences were enormous. The East India Company's governing authority came to an end. The British government assumed direct control of India in 1858. The army was reorganized and British policy toward Indian princes and communities was also adjusted.",
+
+    significance:
+    "The Revolt of 1857 demonstrated that colonial rule faced powerful opposition. Although historians debate how to describe the uprising and the extent of its unity, it remains one of the most significant challenges to Company rule before the twentieth-century independence movement."
+},
+
+
+crown: {
+
+    year: "1858",
+
+    title:
+    "WHEN THE CROWN TOOK CONTROL",
+
+    intro:
+    "Following the uprising of 1857, the system of Company government was replaced by direct rule under the British Crown.",
+
+    scene:
+    "scene-crown",
+
+    definition:
+    "The Government of India Act of 1858 transferred the administration of India from the East India Company to the British Crown. The change followed the Revolt of 1857 and represented a major restructuring of colonial government. The British monarch became the formal sovereign authority, while the Viceroy served as the Crown's principal representative in India.",
+
+    causes:
+    "The British government considered the Company's administration unable to safely manage its growing responsibilities after the Revolt of 1857. The uprising convinced British authorities that major changes were necessary in the structure of government and the relationship between colonial officials and Indian rulers.",
+
+    effects:
+    "The East India Company's political authority ended. A new system of Crown administration was established. The British government became directly responsible for Indian affairs. The army and administration were reorganized, while British officials attempted to strengthen relationships with Indian princes and influential groups.",
+
+    significance:
+    "The year 1858 marks the beginning of the period commonly called the British Raj. Direct Crown rule lasted until independence in 1947 and shaped India's political, economic and administrative development for nearly nine decades."
+},
+
+
+congress: {
+
+    year: "1885",
+
+    title:
+    "THE RISE OF INDIAN NATIONALISM",
+
+    intro:
+    "A new political organization provides a platform for Indians to discuss government, economic issues and political rights.",
+
+    scene:
+    "scene-congress",
+
+    definition:
+    "The Indian National Congress was founded in Bombay in 1885. In its early years, the organization brought together educated Indians who wanted greater participation in government and reforms to colonial administration. Early Congress leaders generally used constitutional methods such as meetings, petitions and political discussion. Over the following decades, the organization changed significantly as Indian nationalism became broader and more assertive.",
+
+    causes:
+    "The growth of education, newspapers, political associations and communication networks helped create a wider political awareness. Indian intellectuals increasingly discussed economic conditions, representation and the relationship between India and Britain. The development of modern political organizations provided a way for these concerns to be expressed collectively.",
+
+    effects:
+    "The Congress became an increasingly important organization in Indian politics. Its membership and methods changed over time. During the twentieth century it became one of the principal organizations involved in the independence movement and helped organize mass political campaigns.",
+
+    significance:
+    "The founding of the Congress was an important stage in the development of organized Indian nationalism. It created a political platform that would eventually become central to the struggle against colonial rule."
+},
+
+
+famine: {
+
+    year: "1943",
+
+    title:
+    "THE BENGAL FAMINE",
+
+    intro:
+    "During the Second World War, Bengal experienced a devastating food crisis in which millions suffered from hunger, disease, displacement and loss of livelihoods.",
+
+    scene:
+    "scene-famine",
+
+    definition:
+    "The Bengal Famine of 1943 was a severe humanitarian crisis in British India. It developed through several interacting factors rather than a single cause. Wartime disruption affected food supplies and transport. Rice imports from Burma had been cut off after the Japanese occupation. Crop problems, inflation, speculation, shortages and difficulties in obtaining food also contributed. The crisis became particularly severe for people whose incomes could not keep pace with rapidly increasing food prices.",
+
+    causes:
+    "The Second World War placed enormous pressure on Bengal's economy and transport systems. The loss of rice imports from Burma reduced available supplies. A cyclone and crop losses also affected parts of Bengal. Inflation increased the cost of food, while wartime policies and distribution problems affected access to supplies. Historians continue to debate the relative importance of these factors and the role of government policy.",
+
+    effects:
+    "The famine caused widespread hunger, disease, displacement and loss of livelihoods. Poor rural families were especially vulnerable because they often lacked the purchasing power needed to obtain food at rapidly increasing prices. The crisis caused enormous human suffering and generated strong criticism of the colonial government's handling of wartime food policy.",
+
+    significance:
+    "The Bengal Famine became an important example of how war, markets, government policy and access to food can interact during a humanitarian crisis. It also intensified criticism of colonial administration during the final years before independence."
+},
+
+
+independence: {
+
+    year: "1947",
+
+    title:
+    "THE DAY INDIA BECAME INDEPENDENT",
+
+    intro:
+    "After decades of political movements, negotiations and resistance, British colonial rule came to an end in 1947.",
+
+    scene:
+    "scene-independence",
+
+    definition:
+    "India became independent on 15 August 1947. The Indian Independence Act of 1947 ended British sovereignty over the subcontinent and created the independent dominions of India and Pakistan. Independence followed a long period of political struggle involving many organizations, leaders, movements and ordinary citizens. The final transfer of power occurred alongside the Partition of British India.",
+
+    causes:
+    "Indian nationalism had developed over many decades. Political campaigns, mass movements, constitutional negotiations, resistance to colonial policies and the effects of the Second World War all contributed to the eventual end of British rule. After the war, Britain faced major economic and political difficulties and the question of India's future became increasingly urgent.",
+
+    effects:
+    "British colonial rule ended and India became an independent country. Pakistan was created at the same time. Partition resulted in enormous population movements and severe social disruption. The new governments faced the difficult tasks of building political institutions, managing refugees and addressing the consequences of Partition.",
+
+    significance:
+    "1947 marked the end of nearly two centuries of expanding British political control, beginning with the East India Company's rise and ending with independence. It was a moment of enormous historical importance, combining the achievement of independence with the immense challenges created by Partition."
+}
+
+};
+
+
+/* =====================================================
+   OPEN EVENT
+===================================================== */
+
+function openEvent(eventName) {
+
+    const data = events[eventName];
+
+    if (!data) {
+        return;
+    }
+
+
+    document.getElementById("homePage")
+        .style.display = "none";
+
+
+    document.getElementById("eventPage")
+        .style.display = "block";
+
+
+    document.getElementById("eventNumber")
+        .textContent = data.year;
+
+
+    document.getElementById("eventTitle")
+        .textContent = data.title;
+
+
+    document.getElementById("eventIntro")
+        .textContent = data.intro;
+
+
+    document.getElementById("definition")
+        .textContent = data.definition;
+
+
+    document.getElementById("causes")
+        .textContent = data.causes;
+
+
+    document.getElementById("effects")
+        .textContent = data.effects;
+
+
+    document.getElementById("significance")
+        .textContent = data.significance;
+
+
+    const background =
+        document.getElementById(
+            "eventBackground"
+        );
+
+
+    background.className =
+        "eventBackground " + data.scene;
+
+
+    window.scrollTo({
+        top: 0,
+        behavior: "instant"
+    });
+
+}
+
+
+/* =====================================================
+   CLOSE EVENT
+===================================================== */
+
+function closeEvent() {
+
+    document.getElementById("eventPage")
+        .style.display = "none";
+
+
+    document.getElementById("homePage")
+        .style.display = "block";
+
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+}
+
+
+/* =====================================================
+   CATEGORY INFORMATION
+===================================================== */
+
+const categories = {
+
+power: {
+
+    icon: "⚡",
+
+    title: "THE STRUGGLE FOR POWER",
+
+    text:
+    "Colonial power did not appear overnight. The East India Company began as a trading organization and gradually developed military and political influence. Victories, alliances, taxation, administration and control of territory allowed the Company to expand its authority. After 1858, direct Crown rule replaced Company government."
+},
+
+resistance: {
+
+    icon: "✊",
+
+    title: "THE SPIRIT OF RESISTANCE",
+
+    text:
+    "Resistance to colonial rule took many forms. Local rulers, soldiers, peasants, tribal communities, political organizations and ordinary citizens challenged colonial policies in different ways. The Revolt of 1857 was one major uprising, while twentieth-century nationalism created new forms of organized political resistance."
+},
+
+crisis: {
+
+    icon: "🌾",
+
+    title: "AN ERA OF CRISIS",
+
+    text:
+    "Colonial India experienced serious economic and humanitarian crises. Famines, wartime disruption, inflation and changes in agriculture affected millions. The Bengal Famine of 1943 became one of the most important crises of the final years of colonial rule."
+},
+
+nationalism: {
+
+    icon: "📣",
+
+    title: "THE RISE OF NATIONALISM",
+
+    text:
+    "Indian nationalism developed gradually during the nineteenth and twentieth centuries. Education, newspapers, political organizations and public debate helped create new ideas about citizenship, representation and self-government. These ideas eventually became a powerful force in the independence movement."
+},
+
+society: {
+
+    icon: "👥",
+
+    title: "A CHANGING SOCIETY",
+
+    text:
+    "Colonial rule affected Indian society in many ways. Laws, education, cities, transportation, employment and administrative institutions changed. These changes produced both new opportunities and serious conflicts, and their effects differed between regions and communities."
+},
+
+economy: {
+
+    icon: "💰",
+
+    title: "THE COLONIAL ECONOMY",
+
+    text:
+    "Trade, taxation, agriculture and industry were transformed during colonial rule. India became deeply connected to global markets. At the same time, debates developed over taxation, agricultural policies, industrial development, poverty and the movement of wealth."
+},
+
+culture: {
+
+    icon: "📚",
+
+    title: "CULTURE & EDUCATION",
+
+    text:
+    "Colonial education introduced new institutions, subjects and forms of learning. English education became important for sections of Indian society, while debates continued over Indian languages, traditions and cultural identity. Education also helped create a group of Indians who became active in political and social reform."
+},
+
+independence: {
+
+    icon: "🇮🇳",
+
+    title: "THE ROAD TO INDEPENDENCE",
+
+    text:
+    "The struggle for independence developed over many decades. Political organizations, public campaigns, negotiations and mass movements challenged colonial authority. In 1947, British rule ended, but independence occurred alongside Partition and enormous social upheaval."
+}
+
+};
+
+
+/* =====================================================
+   SHOW CATEGORY
+===================================================== */
+
+function showCategory(name) {
+
+    const data =
+        categories[name];
+
+    if (!data) {
+        return;
+    }
+
+
+    document.getElementById(
+        "categoryIcon"
+    ).textContent =
+        data.icon;
+
+
+    document.getElementById(
+        "categoryTitle"
+    ).textContent =
+        data.title;
+
+
+    document.getElementById(
+        "categoryText"
+    ).textContent =
+        data.text;
+
+
+    const overlay =
+        document.getElementById(
+            "categoryOverlay"
+        );
+
+
+    overlay.classList.add("active");
+
+
+    setTimeout(function() {
+
+        overlay.classList.remove("active");
+
+    }, 2500);
+
+}
+
+</script>
+
+</body>
+
+</html>
